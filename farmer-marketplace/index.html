@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgriDirect - Farmer Marketplace</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="logo">
+        🌾 <span>AgriDirect</span>
+    </div>
+
+    <nav>
+        <button class="nav-item active" onclick="showPage('dashboard', this)">
+            📊 Dashboard
+        </button>
+
+        <button class="nav-item" onclick="showPage('marketplace', this)">
+            🛒 Marketplace
+        </button>
+
+        <button class="nav-item" onclick="showPage('farmers', this)">
+            🌱 Farmers & FPOs
+        </button>
+
+        <button class="nav-item" onclick="showPage('orders', this)">
+            📦 Orders
+        </button>
+
+        <button class="nav-item" onclick="showPage('ai', this)">
+            🤖 AI Insights
+        </button>
+
+        <button class="nav-item" onclick="showPage('logistics', this)">
+            🚚 Logistics
+        </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <button>⚙ Settings</button>
+        <button>❓ Help</button>
+    </div>
+
+</aside>
+
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <div>
+            <h2 id="pageTitle">Dashboard</h2>
+            <p>Welcome to AgriDirect</p>
+        </div>
+
+        <div class="profile">
+            <div class="notification">🔔</div>
+
+            <div class="avatar">
+                SP
+            </div>
+
+            <div>
+                <strong>Admin</strong>
+                <small>Marketplace Manager</small>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page active-page">
+
+        <div class="welcome">
+            <div>
+                <h1>Direct Farm-to-Market 🌾</h1>
+
+                <p>
+                    Connect farmers directly with consumers and bulk buyers.
+                </p>
+
+                <button class="primary-btn"
+                        onclick="showPage('marketplace')">
+                    Explore Marketplace →
+                </button>
+            </div>
+
+            <div class="welcome-icon">
+                🌾
+            </div>
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon green">🌱</div>
+                <div>
+                    <span>Registered Farmers</span>
+                    <h2>1,248</h2>
+                    <small class="positive">↑ 12% this month</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon blue">🛒</div>
+                <div>
+                    <span>Active Buyers</span>
+                    <h2>684</h2>
+                    <small class="positive">↑ 8% this month</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">📦</div>
+                <div>
+                    <span>Orders</span>
+                    <h2>3,842</h2>
+                    <small class="positive">↑ 18% this month</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">💰</div>
+                <div>
+                    <span>Farmer Earnings</span>
+                    <h2>₹18.6L</h2>
+                    <small class="positive">↑ 21% this month</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- CONTENT GRID -->
+
+        <div class="dashboard-grid">
+
+            <div class="card">
+
+                <div class="card-header">
+                    <h3>Recent Orders</h3>
+                    <button onclick="showPage('orders')">
+                        View All
+                    </button>
+                </div>
+
+                <table>
+
+                    <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Buyer</th>
+                        <th>Product</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+                        <td>#ORD1024</td>
+                        <td>FreshMart</td>
+                        <td>Tomatoes</td>
+                        <td>₹12,500</td>
+                        <td><span class="status delivered">Delivered</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>#ORD1023</td>
+                        <td>Green Foods</td>
+                        <td>Rice</td>
+                        <td>₹28,000</td>
+                        <td><span class="status transit">In Transit</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>#ORD1022</td>
+                        <td>City Market</td>
+                        <td>Onions</td>
+                        <td>₹9,800</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- AI CARD -->
+
+            <div class="card ai-card">
+
+                <div class="card-header">
+                    <h3>🤖 AI Demand Forecast</h3>
+                </div>
+
+                <div class="forecast">
+
+                    <div class="crop">
+                        <span>🍅</span>
+
+                        <div>
+                            <strong>Tomatoes</strong>
+                            <small>Next 7 days</small>
+                        </div>
+
+                        <b class="high">HIGH</b>
+                    </div>
+
+                    <div class="crop">
+                        <span>🧅</span>
+
+                        <div>
+                            <strong>Onions</strong>
+                            <small>Next 7 days</small>
+                        </div>
+
+                        <b class="medium">MEDIUM</b>
+                    </div>
+
+                    <div class="crop">
+                        <span>🌾</span>
+
+                        <div>
+                            <strong>Rice</strong>
+                            <small>Next 7 days</small>
+                        </div>
+
+                        <b class="high">HIGH</b>
+                    </div>
+
+                </div>
+
+                <button class="ai-btn"
+                        onclick="showPage('ai')">
+                    View AI Analysis →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MARKETPLACE -->
+
+    <section id="marketplace" class="page">
+
+        <div class="section-header">
+
+            <div>
+                <h1>Marketplace</h1>
+                <p>Buy directly from farmers and FPOs.</p>
+            </div>
+
+            <button class="primary-btn">
+                + Add Product
+            </button>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search crops..."
+                    onkeyup="searchProducts()">
+
+            <select>
+                <option>All Categories</option>
+                <option>Vegetables</option>
+                <option>Fruits</option>
+                <option>Grains</option>
+            </select>
+
+        </div>
+
+
+        <div class="products" id="products">
+
+            <div class="product-card">
+
+                <div class="product-image tomato">
+                    🍅
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Vegetables</span>
+
+                    <h3>Fresh Tomatoes</h3>
+
+                    <p>🌱 Ramesh FPO</p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <strong>₹28/kg</strong>
+                            <small>500 kg available</small>
+                        </div>
+
+                        <button onclick="addToCart('Tomatoes')">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image onion">
+                    🧅
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Vegetables</span>
+
+                    <h3>Red Onions</h3>
+
+                    <p>🌱 Telangana FPO</p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <strong>₹24/kg</strong>
+                            <small>800 kg available</small>
+                        </div>
+
+                        <button onclick="addToCart('Onions')">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image rice">
+                    🌾
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Grains</span>
+
+                    <h3>Premium Rice</h3>
+
+                    <p>🌱 Krishna FPO</p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <strong>₹62/kg</strong>
+                            <small>2,000 kg available</small>
+                        </div>
+
+                        <button onclick="addToCart('Rice')">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image mango">
+                    🥭
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">Fruits</span>
+
+                    <h3>Alphonso Mango</h3>
+
+                    <p>🌱 Warangal FPO</p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <strong>₹110/kg</strong>
+                            <small>300 kg available</small>
+                        </div>
+
+                        <button onclick="addToCart('Mangoes')">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FARMERS -->
+
+    <section id="farmers" class="page">
+
+        <div class="section-header">
+
+            <div>
+                <h1>Farmers & FPOs</h1>
+                <p>Verified agricultural producers.</p>
+            </div>
+
+            <button class="primary-btn">
+                + Register Farmer
+            </button>
+
+        </div>
+
+        <div class="farmer-grid">
+
+            <div class="farmer-card">
+                <div class="farmer-avatar">RF</div>
+
+                <h3>Ramesh FPO</h3>
+
+                <p>📍 Hyderabad, Telangana</p>
+
+                <span class="verified">✓ Verified</span>
+
+                <hr>
+
+                <div class="farmer-data">
+                    <span>
+                        <b>42</b>
+                        Farmers
+                    </span>
+
+                    <span>
+                        <b>18</b>
+                        Products
+                    </span>
+
+                    <span>
+                        <b>4.8 ⭐</b>
+                        Rating
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="farmer-card">
+
+                <div class="farmer-avatar">TF</div>
+
+                <h3>Telangana Farmers FPO</h3>
+
+                <p>📍 Warangal, Telangana</p>
+
+                <span class="verified">✓ Verified</span>
+
+                <hr>
+
+                <div class="farmer-data">
+
+                    <span>
+                        <b>86</b>
+                        Farmers
+                    </span>
+
+                    <span>
+                        <b>31</b>
+                        Products
+                    </span>
+
+                    <span>
+                        <b>4.7 ⭐</b>
+                        Rating
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ORDERS -->
+
+    <section id="orders" class="page">
+
+        <div class="section-header">
+
+            <div>
+                <h1>Orders</h1>
+                <p>Track marketplace orders.</p>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <table>
+
+                <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Buyer</th>
+                    <th>Farmer/FPO</th>
+                    <th>Product</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <tr>
+                    <td>#ORD1024</td>
+                    <td>FreshMart</td>
+                    <td>Ramesh FPO</td>
+                    <td>Tomatoes</td>
+                    <td>₹12,500</td>
+                    <td>
+                        <span class="status delivered">
+                            Delivered
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>#ORD1023</td>
+                    <td>Green Foods</td>
+                    <td>Telangana FPO</td>
+                    <td>Rice</td>
+                    <td>₹28,000</td>
+                    <td>
+                        <span class="status transit">
+                            In Transit
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>#ORD1022</td>
+                    <td>City Market</td>
+                    <td>Ramesh FPO</td>
+                    <td>Onions</td>
+                    <td>₹9,800</td>
+                    <td>
+                        <span class="status pending">
+                            Pending
+                        </span>
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI -->
+
+    <section id="ai" class="page">
+
+        <div class="section-header">
+
+            <div>
+                <h1>🤖 AI Demand Intelligence</h1>
+
+                <p>
+                    Predict demand and help farmers make better decisions.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="ai-overview">
+
+            <div class="ai-main-card">
+
+                <span>Predicted Market Demand</span>
+
+                <h1>+18.6%</h1>
+
+                <p>
+                    Expected increase in demand over the next 7 days.
+                </p>
+
+                <div class="prediction-bar">
+                    <div></div>
+                </div>
+
+            </div>
+
+
+            <div class="ai-main-card">
+
+                <span>Potential Farmer Revenue</span>
+
+                <h1>₹4.8L</h1>
+
+                <p>
+                    Estimated revenue opportunity from predicted demand.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3>Crop Demand Prediction</h3>
+            </div>
+
+            <table>
+
+                <thead>
+
+                <tr>
+                    <th>Crop</th>
+                    <th>Current Demand</th>
+                    <th>Predicted Demand</th>
+                    <th>Trend</th>
+                    <th>Recommendation</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+                    <td>🍅 Tomatoes</td>
+                    <td>820 kg</td>
+                    <td>1,150 kg</td>
+                    <td class="positive">↑ 40%</td>
+                    <td>Increase supply</td>
+                </tr>
+
+                <tr>
+                    <td>🧅 Onions</td>
+                    <td>900 kg</td>
+                    <td>1,000 kg</td>
+                    <td class="positive">↑ 11%</td>
+                    <td>Maintain supply</td>
+                </tr>
+
+                <tr>
+                    <td>🌾 Rice</td>
+                    <td>2,500 kg</td>
+                    <td>3,200 kg</td>
+                    <td class="positive">↑ 28%</td>
+                    <td>Increase supply</td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOGISTICS -->
+
+    <section id="logistics" class="page">
+
+        <div class="section-header">
+
+            <div>
+
+                <h1>🚚 Logistics</h1>
+
+                <p>
+                    Optimize pickup and delivery routes.
+                </p>
+
+            </div>
+
+            <button class="primary-btn"
+                    onclick="optimizeRoute()">
+
+                Optimize Route
+
+            </button>
+
+        </div>
+
+
+        <div class="route-card">
+
+            <div class="route-header">
+
+                <div>
+                    <span>Today's Route</span>
+                    <h2>Hyderabad → Secunderabad</h2>
+                </div>
+
+                <span class="route-status">
+                    Optimized
+                </span>
+
+            </div>
+
+
+            <div class="route-line">
+
+                <div class="location-point">
+                    <span>📍</span>
+
+                    <div>
+                        <strong>Ramesh FPO</strong>
+                        <small>Pickup • 9:00 AM</small>
+                    </div>
+                </div>
+
+
+                <div class="line"></div>
+
+
+                <div class="location-point">
+                    <span>📍</span>
+
+                    <div>
+                        <strong>FreshMart</strong>
+                        <small>Delivery • 10:30 AM</small>
+                    </div>
+                </div>
+
+
+                <div class="line"></div>
+
+
+                <div class="location-point">
+                    <span>📍</span>
+
+                    <div>
+                        <strong>City Market</strong>
+                        <small>Delivery • 11:15 AM</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="route-stats">
+
+                <div>
+                    <span>Distance</span>
+                    <strong>38 km</strong>
+                </div>
+
+                <div>
+                    <span>Estimated Time</span>
+                    <strong>2h 15m</strong>
+                </div>
+
+                <div>
+                    <span>Fuel Saved</span>
+                    <strong>18%</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+    Added successfully!
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
